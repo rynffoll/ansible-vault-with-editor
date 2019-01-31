@@ -1,0 +1,10 @@
+* Ansible Vault With Editor Mode
+#+begin_src emacs-lisp
+(use-package ansible-vault-with-editor-mode
+  :ensure nil
+  :quelpa
+  (ansible-vault-with-editor-mode
+   :fetcher github
+   :repo "rynffoll/ansible-vault-with-editor-mode"))
+#+end_src
+
