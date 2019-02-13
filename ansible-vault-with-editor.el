@@ -1,8 +1,8 @@
-;;; ansible-vault-with-editor-mode.el --- Ansible Vault With Editor  -*- lexical-binding: nil; -*-
+;;; ansible-vault-with-editor.el --- Ansible Vault With Editor  -*- lexical-binding: nil; -*-
 
 ;; Copyright (C) 2019  Ruslan Kamashev
 
-;; Author: Ruslan Kamashev <rynffoll@mbp.local>
+;; Author: Ruslan Kamashev <rynffoll@gmail.com>
 ;; Keywords: tools
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -44,18 +44,35 @@
   :type 'file
   :group 'ansible-vault-with-editor)
 
-;;;###autoload
-(defun ansible-vault-with-editor-on-buffer ()
-  "Edit vault file."
-  (interactive)
+(defun ansible-vault-with-editor-run-action (action)
+  "Run ansible-vault ACTION."
   (if (and ansible-vault-with-editor-password-file
            (file-exists-p ansible-vault-with-editor-password-file))
     (with-editor-async-shell-command
-     (format "%s --vault-id=%s edit %s"
+     (format "%s --vault-id=%s %s %s"
              ansible-vault-with-editor-command
              ansible-vault-with-editor-password-file
+             action
              (buffer-file-name)))
     (message "Correctly set `ansible-vault-with-editor-password-file' variable.")))
 
-(provide 'ansible-vault-with-editor-mode)
-;;; ansible-vault-with-editor-mode.el ends here
+;;;###autoload
+(defun ansible-vault-with-editor-edit ()
+  "Edit vault file."
+  (interactive)
+  (ansible-vault-with-editor-run-action "edit"))
+
+;;;###autoload
+(defun ansible-vault-with-editor-encrypt ()
+  "Encrypt vault file."
+  (interactive)
+  (ansible-vault-with-editor-run-action "encrypt"))
+
+;;;###autoload
+(defun ansible-vault-with-editor-decrypt ()
+  "Encrypt vault file."
+  (interactive)
+  (ansible-vault-with-editor-run-action "decrypt"))
+
+(provide 'ansible-vault-with-editor)
+;;; ansible-vault-with-editor.el ends here
