@@ -25,7 +25,6 @@
 ;;; Code:
 
 (require 'with-editor)
-(require 's)
 
 (defgroup ansible-vault-with-editor
   nil
@@ -49,7 +48,7 @@
   (if (and ansible-vault-with-editor-password-file
            (file-exists-p ansible-vault-with-editor-password-file))
     (with-editor-async-shell-command
-     (format "%s --vault-id=%s %s %s"
+     (format "%s --vault-password-file %s %s %s"
              ansible-vault-with-editor-command
              ansible-vault-with-editor-password-file
              action
