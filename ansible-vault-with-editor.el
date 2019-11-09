@@ -48,10 +48,10 @@
   (if (and ansible-vault-with-editor-password-file
            (file-exists-p ansible-vault-with-editor-password-file))
     (with-editor-async-shell-command
-     (format "%s --vault-password-file %s %s %s"
+     (format "%s %s --vault-password-file %s %s"
              ansible-vault-with-editor-command
-             ansible-vault-with-editor-password-file
              action
+             ansible-vault-with-editor-password-file
              (buffer-file-name)))
     (message "Correctly set `ansible-vault-with-editor-password-file' variable.")))
 
