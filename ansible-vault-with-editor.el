@@ -73,7 +73,7 @@
 
 ;;;###autoload
 (defun ansible-vault-with-editor-decrypt ()
-  "Encrypt vault file."
+  "Dencrypt vault file."
   (interactive)
   (ansible-vault-with-editor-run-action "decrypt"))
 

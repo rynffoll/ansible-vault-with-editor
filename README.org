@@ -6,3 +6,8 @@ Integration ~ansible-vault~ and ~with-editor~
   :vc (:fetcher github :repo "rynffoll/ansible-vault-with-editor"))
 #+end_src
 
+** Usage
+- ~ansible-vault-with-editor-edit~: edit vault file
+- ~ansible-vault-with-editor-encrypt~: encrypt vault file
+- ~ansible-vault-with-editor-decrypt~: decrypt vault file
+
