@@ -38,6 +38,7 @@
   nil
   "Path to password file."
   :type 'file
+  :safe 'stringp
   :group 'ansible-vault-with-editor)
 
 (defcustom ansible-vault-with-editor-command
