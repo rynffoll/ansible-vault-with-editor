@@ -34,17 +34,19 @@
   "Ansible Vault With Editor."
   :group 'tools)
 
+;;;###autoload
 (defcustom ansible-vault-with-editor-password-file
   nil
   "Path to password file."
-  :type 'file
-  :safe 'stringp
-  :group 'ansible-vault-with-editor)
+  :type 'string
+  :group 'ansible-vault-with-editor
+  :local t
+  :safe 'stringp)
 
 (defcustom ansible-vault-with-editor-command
   "ansible-vault"
   "`ansible-vault' command."
-  :type 'file
+  :type 'string
   :group 'ansible-vault-with-editor)
 
 (defun ansible-vault-with-editor-run-action (action)
