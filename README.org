@@ -1,10 +1,8 @@
 * Ansible Vault With Editor
+
+Integration ~ansible-vault~ and ~with-editor~
 #+begin_src emacs-lisp
 (use-package ansible-vault-with-editor
-  :ensure nil
-  :quelpa
-  (ansible-vault-with-editor
-   :fetcher github
-   :repo "rynffoll/ansible-vault-with-editor"))
+  :vc (:fetcher github :repo "rynffoll/ansible-vault-with-editor"))
 #+end_src
 

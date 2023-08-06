@@ -1,9 +1,12 @@
 ;;; ansible-vault-with-editor.el --- Ansible Vault With Editor  -*- lexical-binding: nil; -*-
 
-;; Copyright (C) 2019  Ruslan Kamashev
+;; Copyright (C) 2023  Ruslan Kamashev
 
 ;; Author: Ruslan Kamashev <rynffoll@gmail.com>
 ;; Keywords: tools
+;; Version: 0.1
+;; Package-Requires: ((with-editor))
+;; Homepage: https://github.com/rynffoll/ansible-vault-with-editor
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -20,7 +23,7 @@
 
 ;;; Commentary:
 
-;; 
+;; Integration `ansible-vault' and `with-editor'
 
 ;;; Code:
 
@@ -28,7 +31,7 @@
 
 (defgroup ansible-vault-with-editor
   nil
-  "Ansible Vault With Editor"
+  "Ansible Vault With Editor."
   :group 'tools)
 
 (defcustom ansible-vault-with-editor-password-file
